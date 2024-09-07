@@ -16,6 +16,9 @@ const Middle = () => {
          />
         ))}
       </div>
+      <div className='mt-9 p-5 flex-center'>
+       <p className='text-white font-semibold text-2xl'>Prices may vary depending on tools and framework used : <span className='text-color cursor-pointer underline'><a href="tel:+254701729985">Call for more Info</a></span></p>
+      </div>
     </div>
   )
 }

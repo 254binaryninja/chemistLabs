@@ -22,8 +22,8 @@ const Navbar = () => {
   },[])
 
   return (
-    <div className={cn("flex-between sticky left-0 top-0 right-0 px-6 py-4 lg:px-10",{
-      "glassmorphism z-10":isIscrolled,
+    <div className={cn("flex-between sticky z-10 left-0 top-0 right-0 px-6 py-4 lg:px-10",{
+      "glassmorphism ":isIscrolled,
       "bg-transparent":!isIscrolled
     })}>
       <Link href="/" className="flex items-center gap-1 p-2">
