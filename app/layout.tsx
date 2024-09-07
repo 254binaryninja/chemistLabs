@@ -6,8 +6,8 @@ import Navbar from "@/components/navbar/Navbar";
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Chemist Labs | Innovative Software Solutions",
-  description: "Chemist Labs - Crafting cutting-edge software solutions for tomorrow's challenges",
+  title: "Binary Labs | Innovative Software Solutions",
+  description: "Binary Labs - Crafting cutting-edge software solutions for tomorrow's challenges",
   icons:{
     icon:"/images/logo.png"
   }
