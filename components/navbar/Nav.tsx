@@ -1,5 +1,4 @@
 import React from 'react'
-import { navItems } from '@/constants'
 import Link from 'next/link'
 import {
   NavigationMenu,
@@ -11,39 +10,45 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
+import { blogItems, serviceItems } from '@/constants'
 
+// Reusable Link Item
+const NavigationMenuLinkItem = ({ route, label }: { route: string, label: string }) => {
+  return (
+      <Link href={route} className='w-full'>
+        <NavigationMenuItem className='py-2 px-4 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors rounded-md'>
+          {label}
+        </NavigationMenuItem>
+      </Link>
+  )
+}
 
+// Reusable Navigation Menu
+const NavigationMenuItems = ({ title, items }: { title: string, items: { route: string, label: string }[] }) => {
+  return (
+      <NavigationMenu>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className='text-lg font-medium'>
+            {title}
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className='bg-white shadow-md rounded-md p-4'>
+            <NavigationMenuList className='flex flex-col gap-2'>
+              {items.map((item, i) => (
+                  <NavigationMenuLinkItem key={i} route={item.route} label={item.label} />
+              ))}
+            </NavigationMenuList>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenu>
+  )
+}
 
 const Nav = () => {
   return (
-    <div className='flex flex-row gap-4 mx-3 p-2'>
-      {navItems.map((nav,i)=>(
-       <NavigationMenu key={i}>
-        <NavigationMenuItem>
-           <NavigationMenuTrigger>
-           <NavigationMenuLink>
-           {nav.label}
-           </NavigationMenuLink>
-           </NavigationMenuTrigger>
-           <NavigationMenuContent>
-            <div className='p-2 w-[250px]  flex flex-row gap-5'>
-               <div className='p-1 flex flex-col gap-3'>
-                <Link href={nav.set.apps?.route|| `not`}>
-                <h1 className='text-xl font-medium text-black'>
-                  {nav.set.apps?.label}
-                </h1>
-                </Link>
-                <p className='text-sm font-normal text-black'>
-                  {nav.set.apps?.topic}
-                </p>
-               </div>
-            </div>
-           </NavigationMenuContent>
-           </NavigationMenuItem>
-           </NavigationMenu> 
-       
-      ))}
-    </div>
+      <div className='flex flex-row gap-4 mx-3 p-2'>
+        <NavigationMenuItems title="Services" items={serviceItems} />
+        <NavigationMenuItems title="Blogs" items={blogItems} />
+      </div>
   )
 }
 

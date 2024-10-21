@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Binary Labs | Innovative Software Solutions",
   description: "Binary Labs - Crafting cutting-edge software solutions for tomorrow's challenges",
   icons:{
-    icon:"/images/logo.png"
+    icon:"/images/IMG_1.png"
   }
 };
 

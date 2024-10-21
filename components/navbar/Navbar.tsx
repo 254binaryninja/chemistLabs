@@ -22,13 +22,13 @@ const Navbar = () => {
   },[])
 
   return (
-    <div className={cn("flex-between sticky z-10 left-0 top-0 right-0 px-6 py-4 lg:px-10",{
-      "glassmorphism ":isIscrolled,
-      "bg-transparent":!isIscrolled
+    <div className={cn("flex-between",{
+      "glassmorphism mx-7 z-50 rounded-md sticky top-5":isIscrolled,
+      "bg-transparent z-10 left-0 top-0 right-0 px-6 py-4 lg:px-10":!isIscrolled
     })}>
       <Link href="/" className="flex items-center gap-1 p-2">
        <Image
-         src="/images/logo.png"
+         src="/images/IMG_1.png"
          alt="Logo"
          width={40}
          height={40}
